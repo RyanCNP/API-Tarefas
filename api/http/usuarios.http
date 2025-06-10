@@ -1,0 +1,23 @@
+// Instale a extensão REST Client para efetuar os testes
+// Teste da API REST de Usuários
+@baseURL = http://localhost:3000/api/usuarios
+###
+# @prompt senha
+POST {{baseURL}}
+Content-Type: application/json
+
+{
+    "nome": "Albert Einstein",
+    "email": "leme@fatec.gov.br",
+    "senha": "{{senha}}"
+}
+
+###
+# @prompt senha
+POST {{baseURL}}/login
+Content-Type: application/json
+
+{
+    "email": "leme@fatec.gov.br",
+    "senha": "{{senha}}"
+}
