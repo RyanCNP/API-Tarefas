@@ -1,10 +1,10 @@
-# BackendGeo
+# API-Tarefas
 
-Backend do sistema de geolocalização para o projeto da disciplina de Banco de Dados Não Relacional da Fatec Votorantim.
+Backend de um sistema de gerenciamento de tarefas.
 
 ## Sobre o Projeto
 
-Este projeto é o backend de um sistema de geolocalização desenvolvido para os ensinamentos da disciplina. 
+Este é um projeto de uma API para fazer o gerenciamente das tarefas dos usuários. 
 
 ## Tecnologias Utilizadas
 
@@ -26,8 +26,8 @@ Antes de começar, você precisará ter instalado em sua máquina:
 
 1. Clone o repositório
    ```bash
-   git clone https://github.com/fatec-votorantim/backendGeo.git
-   cd backendGeo
+   git clone https://github.com/RyanCNP/API-Tarefas.git
+   cd API-Tarefas
    ```
 
 2. Instale as dependências
@@ -71,7 +71,7 @@ api/municipios/nearby?latitude=-16.7573&longitude=-45.4412&distance=10 - GET
 api/municipios/:id
 Além dos endpoints para o PUT, POST e DELETE
 
-A minha collection municipios no MongoDB está assim:
+A minha collection tarefas no MongoDB está assim:
 {
   "_id": {
     "$oid": "67ed97841ce64dc6575ef650"
