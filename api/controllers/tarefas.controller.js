@@ -1,4 +1,4 @@
-import { ObjectID } from "mongodb";
+import { ObjectId } from "mongodb";
 
 export const getCompletedTasks = async (req, res) => {
     try {
@@ -70,7 +70,7 @@ export const getTaskStatus = async (req, res) => {
     }
 }
 
-export const postTask = async (req, res) => {
+export const createTask = async (req, res) => {
     try {
         const db = req.app.locals.db
         const { titulo, descricao } = req.body
@@ -79,7 +79,7 @@ export const postTask = async (req, res) => {
         if (existTask) return res.status(409).json({ message: "Está tarefa já esta registrada!" })
 
         const newTask = {
-            id: new ObjectID(),
+            id: new ObjectId(),
             titulo,
             descricao,
             concluida: false,
@@ -102,7 +102,7 @@ export const postTask = async (req, res) => {
     }
 }
 
-export const putConcludeTask = async (req, res) => {
+export const updateConcludeTask = async (req, res) => {
     try {
         const db = req.app.locals.db
         const { id } = req.params
@@ -128,7 +128,7 @@ export const putConcludeTask = async (req, res) => {
     }
 }
 
-export const putTaskInformation = async (req, res) => {
+export const updateTaskInformations = async (req, res) => {
     try {
         const db = req.app.locals.db
         const { id } = req.params
