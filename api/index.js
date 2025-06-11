@@ -4,8 +4,8 @@ import fs from 'fs'
 import swaggerUI from 'swagger-ui-express'
 import cors from 'cors' // Importa o módulo cors
 import { connectToDatabase } from './config/db.js'
-import municipiosRoutes from './routes/municipios.js'
-import usuariosRoutes from './routes/usuarios.js'
+import tarefasRoutes from './routes/tarefas.router.js'
+import usuariosRoutes from './routes/usuarios.router.js'
 
 config() //carrega o conteúdo do .env
 const app = express()
@@ -18,7 +18,7 @@ app.use(express.json())//parse do JSON
 //rota pública
 app.use('/', express.static('public'))
 //Rotas do app
-app.use('/api/municipios', municipiosRoutes)
+app.use('/api/tarefas', tarefasRoutes)
 app.use('/api/usuarios', usuariosRoutes)
 // Rota da documentação Swagger 
 app.use('/api/doc', swaggerUI.serve, swaggerUI.setup(JSON.parse(fs.readFileSync('./api/swagger/swagger_output.json')), {
